@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000000;
+}
+
+.container {
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.selector-container,
+#rollButton,
+#resultDisplay {
+    margin: 10px 0;
+}
+
+#typeSelector {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#rollButton {
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#rollButton:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+#resultDisplay {
+    display: none; /* Initially hide the result display */
+    margin-top: 20px;
+    font-size: 30px;
+    color: rgb(247, 7, 247);
+}
+
+#resultDisplay div {
+    margin: 10px 0;
+}
+
+#positionNumber, #positionName {
+    color: inherit; /* Use the same color as the parent */
+}
+
+#positionImage {
+    max-width: 100%;
+    height: auto;
+    visibility: hidden;
+}
+
+#animationOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: magicEffect 1s forwards;
+}
+
+@keyframes magicEffect {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        height: auto;
+        padding: 20px;
+    }
+    
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #rollButton {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #typeSelector {
+        width: 100%;
+        padding: 10px;
+    }
+}
